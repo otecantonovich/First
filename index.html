@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MEAT WASH — премиальный уход за автомобилем в Москве</title>
+<meta name="description" content="Уход, а не просто мойка. Заботимся о каждой машине. Две точки в Москве: Лубянка и Технопарк. Онлайн-запись за минуту." />
+<meta property="og:title" content="MEAT WASH — премиальный уход за автомобилем" />
+<meta property="og:description" content="Уход, а не просто мойка. Две точки в Москве. Онлайн-запись за минуту." />
+<meta property="og:type" content="website" />
+<!-- <meta property="og:image" content="images/og.jpg" />  TODO: обложка 1200x630 -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#0A0A0A; --bg-2:#141414; --bg-3:#1C1C1C;
+  --line:rgba(240,235,227,.10); --line-2:rgba(240,235,227,.20);
+  --text:#F0EBE3; --muted:#9A958C; --muted-2:#6B6B6B;
+  --red:#C41B1B; --red-h:#E0312E; --copper:#A87C3A;
+  --maxw:1180px;
+  --display:'Oswald',system-ui,sans-serif;
+  --body:'Manrope',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--copper)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:15px 26px;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .2s,border-color .2s,color .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--red);color:#fff}
+.btn-primary:hover{background:var(--red-h)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--text)}
+.btn-sm{padding:11px 18px;font-size:13px}
+
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.74);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.16em}
+.brand span{color:var(--red)}
+.nav-links{display:flex;gap:30px;font-size:14px;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-tel{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.nav-tel:hover{color:var(--text)}
+@media(max-width:820px){.nav-links,.nav-tel{display:none}}
+
+.hero{position:relative;padding:clamp(66px,13vh,140px) 0 clamp(40px,7vh,80px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(900px 520px at 78% -8%,rgba(196,27,27,.16),transparent 60%),radial-gradient(700px 600px at 8% 12%,rgba(168,124,58,.10),transparent 55%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;opacity:.5;background-image:repeating-linear-gradient(90deg,rgba(240,235,227,.022) 0 1px,transparent 1px 78px);-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 75%,transparent);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 75%,transparent)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--display);font-weight:700;line-height:.96;letter-spacing:-.01em;font-size:clamp(46px,9vw,104px);text-transform:uppercase;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.sub{margin-top:26px;font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:48ch}
+.hero .cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+.trust .wrap{display:flex;gap:38px;flex-wrap:wrap;align-items:center;padding:20px 22px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.trust .stars{color:var(--copper);letter-spacing:2px}
+.trust b{color:var(--text);font-weight:500}
+.trust a{color:var(--muted);border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.trust a:hover{color:var(--text)}
+
+.offer{background:var(--red);color:#fff}
+.offer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 22px;flex-wrap:wrap}
+.offer p{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(15px,2.2vw,19px)}
+.offer a{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
+
+section.block{padding:clamp(54px,8vh,100px) 0}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:38px}
+.head h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(26px,4vw,42px);letter-spacing:-.01em;line-height:1}
+.head .eyebrow{margin-bottom:12px;display:block}
+
+/* before/after */
+.ba{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line-2);border-radius:4px;overflow:hidden;user-select:none;touch-action:none}
+.ba .layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:clamp(40px,8vw,90px);letter-spacing:.1em;color:rgba(240,235,227,.12)}
+.ba .after{background:linear-gradient(135deg,#20140f,#0c0c0c)}
+.ba .before{background:linear-gradient(135deg,#26282c,#15171b);clip-path:inset(0 50% 0 0)}
+.ba .tagb,.ba .taga{position:absolute;top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);background:rgba(10,10,10,.6);padding:5px 10px;border-radius:2px;z-index:3}
+.ba .tagb{left:14px}.ba .taga{right:14px}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--red);z-index:4;cursor:ew-resize}
+.ba .handle::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
+.ba-note{font-family:var(--mono);font-size:12px;color:var(--muted-2);margin-top:14px;letter-spacing:.03em}
+
+.grid-svc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.svc{background:var(--bg-2);border:1px solid var(--line);border-radius:3px;padding:26px 22px 28px;transition:border-color .2s,transform .2s}
+.svc:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.svc h4{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:20px;letter-spacing:.02em;margin-bottom:10px}
+.svc p{color:var(--muted);font-size:14.5px}
+@media(max-width:880px){.grid-svc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid-svc{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.step{background:var(--bg-2);border:1px solid var(--line);border-radius:3px;padding:24px 20px}
+.step .n{counter-increment:s;font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.18em}
+.step .n::before{content:"0" counter(s)}
+.step h4{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:18px;margin:10px 0 8px}
+.step p{color:var(--muted);font-size:14px}
+@media(max-width:780px){.steps{grid-template-columns:repeat(2,1fr)}}
+
+/* tabs + prices */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tab{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:13px;padding:10px 16px;border:1px solid var(--line-2);border-radius:2px;background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
+.tab:hover{color:var(--text)}
+.tab.active{background:var(--text);color:#0A0A0A;border-color:var(--text)}
+.price-note{font-family:var(--mono);font-size:12px;color:var(--muted-2);margin:0 0 22px;letter-spacing:.03em;line-height:1.7}
+.price-list{border-top:1px solid var(--line-2)}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:20px 4px;border-bottom:1px solid var(--line)}
+.price-row .name{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:18px;letter-spacing:.02em}
+.price-row .desc{display:block;font-family:var(--body);font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--muted-2);margin-top:4px}
+.price-row .val{font-family:var(--mono);font-weight:500;font-size:18px;white-space:nowrap;color:var(--copper);transition:opacity .2s}
+.price-row .val small{color:var(--muted-2);font-size:12px}
+
+/* gallery */
+.grid-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tile{position:relative;aspect-ratio:4/3;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:linear-gradient(135deg,#191919,#0d0d0d);display:flex;align-items:center;justify-content:center}
+.tile::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 80% 0%,rgba(196,27,27,.10),transparent 55%)}
+.tile span{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--muted-2);text-transform:uppercase;z-index:1}
+.tile b{position:absolute;left:14px;bottom:12px;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;color:rgba(240,235,227,.16)}
+@media(max-width:680px){.grid-gal{grid-template-columns:1fr 1fr}}
+
+/* reviews */
+.grid-rev{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rev{background:var(--bg-2);border:1px solid var(--line);border-radius:3px;padding:24px 22px}
+.rev .st{color:var(--copper);letter-spacing:2px;font-size:13px;margin-bottom:12px}
+.rev p{font-size:15px;margin-bottom:14px}
+.rev .who{font-family:var(--mono);font-size:12px;color:var(--muted-2);letter-spacing:.04em}
+@media(max-width:780px){.grid-rev{grid-template-columns:1fr}}
+
+/* locations */
+.grid-loc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.loc{background:var(--bg-2);border:1px solid var(--line-2);border-radius:4px;padding:30px 28px 28px;display:flex;flex-direction:column}
+.loc .tag{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.loc h4{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:30px;letter-spacing:.01em;line-height:1}
+.loc .spec{margin:22px 0 8px;border-top:1px solid var(--line)}
+.loc .spec .r{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.loc .spec .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);min-width:74px;padding-top:2px}
+.loc .spec .v{font-size:15.5px;color:var(--text)}
+.loc .spec .v a:hover{color:var(--copper)}
+.loc .acts{margin-top:auto;padding-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+.loc .acts .btn{flex:1;min-width:140px}
+@media(max-width:760px){.grid-loc{grid-template-columns:1fr}}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 4px;font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 4px 22px;color:var(--muted);font-size:15px;max-width:70ch}
+
+footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.foot .brand{font-size:26px}
+.foot .col h5{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+.foot .col a,.foot .col p{color:var(--muted);font-size:14.5px;margin-bottom:8px;display:block}
+.foot .col a:hover{color:var(--text)}
+.legal{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--muted-2);letter-spacing:.04em;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+.fab{position:fixed;right:18px;bottom:92px;z-index:61;width:54px;height:54px;border-radius:50%;background:var(--text);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:transform .15s}
+.fab:hover{transform:scale(1.06)}
+@media(min-width:821px){.fab{bottom:24px}}
+
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:12px 14px;background:rgba(10,10,10,.93);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.mbar .btn{flex:1}
+@media(max-width:820px){.mbar{display:flex}body{padding-bottom:78px}}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">MEAT<span>·</span>WASH</a>
+    <nav class="nav-links">
+      <a href="#proof">Работы</a>
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+      <a href="#locations">Где мы</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-tel" href="tel:+79300352325">+7 930 035-23-25</a>
+      <a class="btn btn-primary btn-sm" href="#locations">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow rv">Премиальный уход за автомобилем · Москва</span>
+    <h1 class="rv">Уход, а не <em>просто мойка</em></h1>
+    <p class="sub rv">Заботимся о каждой машине — внимательно, бережно и так, чтобы хотелось вернуться. Две точки в Москве, запись за минуту.</p>
+    <div class="cta rv">
+      <a class="btn btn-primary" href="#locations">Записаться онлайн</a>
+      <a class="btn btn-ghost" href="#proof">Смотреть работы</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span><span class="stars">★★★★★</span> <b>5.0</b> на Яндекс Картах</span>
+    <span><b>200+</b> отзывов <span style="color:var(--muted-2)">// сверь актуальное число</span></span>
+    <span><b>2</b> точки в Москве · Лубянка и Технопарк</span>
+    <a href="https://yandex.ru/maps/org/meat_wash/191686454110" target="_blank" rel="noopener">Читать отзывы →</a>
+  </div>
+</div>
+
+<div class="offer rv">
+  <div class="wrap">
+    <p>Кварцевое покрытие — в подарок на первом визите</p>
+    <a href="#locations">Записаться →</a>
+  </div>
+</div>
+
+<!-- PROOF: before/after -->
+<section class="block" id="proof">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Наглядно</span><h3>До и после</h3></div></div>
+    <div class="ba rv" id="ba">
+      <div class="layer after">ПОСЛЕ</div>
+      <div class="layer before" id="baBefore">ДО</div>
+      <span class="tagb">До</span><span class="taga">После</span>
+      <div class="handle" id="baHandle"></div>
+    </div>
+    <p class="ba-note">Потяни ползунок. // замени фон .before и .after на свои реальные фото «до/после»</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="block" id="services" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Что делаем</span><h3>Услуги</h3></div></div>
+    <div class="grid-svc">
+      <div class="svc rv"><h4>Мойка кузова</h4><p>Ручная и бесконтактная. Аккуратно, без следов и разводов.</p></div>
+      <div class="svc rv"><h4>Уход за салоном</h4><p>Химчистка кожи, пластика, текстиля — возвращаем в порядок.</p></div>
+      <div class="svc rv"><h4>Защита и блеск</h4><p>Полировка, кварцевые и защитные покрытия — держится дольше.</p></div>
+      <div class="svc rv"><h4>Детейлинг</h4><p>Глубокая работа по кузову, двигателю и подвеске под задачу.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Как проходит уход</span><h3>Наш процесс</h3></div></div>
+    <div class="steps rv">
+      <div class="step"><div class="n"></div><h4>Эмульсия</h4><p>Наносим состав, который бережно размачивает и снимает грязь.</p></div>
+      <div class="step"><div class="n"></div><h4>Активная пена</h4><p>Бесконтактно убираем загрязнения, не трогая лак.</p></div>
+      <div class="step"><div class="n"></div><h4>Бережный смыв</h4><p>Смываем под давлением аккуратно, по всей поверхности.</p></div>
+      <div class="step"><div class="n"></div><h4>Финиш</h4><p>Сушка, стёкла, детали — отдаём машину готовой.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES with car-class tabs -->
+<section class="block" id="prices" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Честно и постоянно</span><h3>Цены по классу авто</h3></div><a class="btn btn-ghost btn-sm" href="#locations">Записаться</a></div>
+    <div class="tabs rv" id="tabs">
+      <button class="tab active" data-cls="sedan">Седан</button>
+      <button class="tab" data-cls="crossover">Кроссовер</button>
+      <button class="tab" data-cls="suv">Внедорожник</button>
+      <button class="tab" data-cls="pickup">Пикап · микроавтобус</button>
+    </div>
+    <p class="price-note rv">Полный прайс — при записи. Мойку не продаём со скидкой: делаем одинаково хорошо всегда.<br><span style="color:var(--muted-2)">// суммы и коэффициенты по классам — примерные, подставь точные из YCLIENTS</span></p>
+    <div class="price-list rv">
+      <div class="price-row"><div><span class="name">Ручная мойка кузова</span><span class="desc">Снаружи, аккуратно и чисто</span></div><div class="val" data-svc="wash"></div></div>
+      <div class="price-row"><div><span class="name">Комплексная мойка с воском</span><span class="desc">Кузов + салон + стёкла</span></div><div class="val" data-svc="complex"></div></div>
+      <div class="price-row"><div><span class="name">Детейлинг-мойка от реагентов</span><span class="desc">Глубокая зимняя мойка</span></div><div class="val" data-svc="reagents"></div></div>
+      <div class="price-row"><div><span class="name">Премиум химчистка салона</span><span class="desc">Полная, под состояние авто</span></div><div class="val" data-svc="chem"></div></div>
+      <div class="price-row"><div><span class="name">Профессиональная полировка</span><span class="desc">Расчёт после осмотра</span></div><div class="val" data-svc="polish"></div></div>
+      <div class="price-row"><div><span class="name">Кварцевое покрытие</span><span class="desc">Защита кузова</span></div><div class="val" data-svc="quartz"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="block" id="gallery">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Наши работы</span><h3>Галерея</h3></div></div>
+    <div class="grid-gal rv">
+      <div class="tile"><span>фото · /images</span><b>MEAT WASH</b></div>
+      <div class="tile"><span>фото · /images</span><b>MEAT WASH</b></div>
+      <div class="tile"><span>фото · /images</span><b>MEAT WASH</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="block" id="reviews" style="background:var(--bg-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">5.0 на Яндексе</span><h3>Что говорят клиенты</h3></div><a class="btn btn-ghost btn-sm" href="https://yandex.ru/maps/org/meat_wash/191686454110" target="_blank" rel="noopener">Все отзывы</a></div>
+    <div class="grid-rev rv">
+      <div class="rev"><div class="st">★★★★★</div><p>Машину вернули как новую, видно, что делали аккуратно и без спешки. Приеду ещё.</p><div class="who">// пример — замени реальным отзывом</div></div>
+      <div class="rev"><div class="st">★★★★★</div><p>Записался онлайн за минуту, приняли вовремя. Отношение — будто это их собственная машина.</p><div class="who">// пример — замени реальным отзывом</div></div>
+      <div class="rev"><div class="st">★★★★★</div><p>Премиум во всём: от чистоты до общения. Цена честная, результат держится.</p><div class="who">// пример — замени реальным отзывом</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="block" id="locations">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Две точки в Москве</span><h3>Где мы</h3></div></div>
+    <div class="grid-loc">
+      <div class="loc rv">
+        <div class="tag">01 · Центр</div>
+        <h4>Meat Wash<br>Лубянка</h4>
+        <div class="spec">
+          <div class="r"><div class="k">Адрес</div><div class="v">Мясницкая ул., 11</div></div>
+          <div class="r"><div class="k">Часы</div><div class="v">Пн–Пт · 08:00–22:00</div></div>
+          <div class="r"><div class="k">Телефон</div><div class="v"><a href="tel:+79300352325">+7 930 035-23-25</a></div></div>
+        </div>
+        <div class="acts">
+          <a class="btn btn-primary" href="https://n975571.yclients.com" target="_blank" rel="noopener" data-goal="book_lubyanka">Записаться</a>
+          <a class="btn btn-ghost" href="https://yandex.ru/maps/org/meat_wash/191686454110" target="_blank" rel="noopener" data-goal="route_lubyanka">Маршрут</a>
+        </div>
+      </div>
+      <div class="loc rv">
+        <div class="tag">02 · Юг</div>
+        <h4>Meat Wash<br>Технопарк</h4>
+        <div class="spec">
+          <div class="r"><div class="k">Адрес</div><div class="v">просп. Андропова, 8, стр. 2</div></div>
+          <div class="r"><div class="k">Часы</div><div class="v">Ежедневно · 08:00–22:00</div></div>
+          <div class="r"><div class="k">Телефон</div><div class="v"><a href="tel:+79314916991">+7 931 491-69-91</a></div></div>
+        </div>
+        <div class="acts">
+          <a class="btn btn-primary" href="https://n1982508.yclients.com" target="_blank" rel="noopener" data-goal="book_technopark">Записаться</a>
+          <a class="btn btn-ghost" href="https://yandex.ru/maps/org/meat_wash_tekhnopark/122667992007" target="_blank" rel="noopener" data-goal="route_technopark">Маршрут</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq" style="background:var(--bg-2);border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:880px">
+    <div class="head rv"><div><span class="eyebrow">Вопросы</span><h3>Коротко о важном</h3></div></div>
+    <div class="faq rv">
+      <details><summary>Нужна ли предварительная запись?</summary><p>Лучше записаться онлайн — так мы примем вовремя и без ожидания. Кнопка «Записаться» ведёт в систему записи нужной точки.</p></details>
+      <details><summary>От чего зависит цена?</summary><p>От класса автомобиля и состояния. Базовые цены по классам — в разделе «Цены», точную сумму назовём при записи или на осмотре.</p></details>
+      <details><summary>Сколько занимает по времени?</summary><p>Зависит от услуги: мойка — быстро, детейлинг и химчистка — дольше. Сориентируем по времени при записи.</p></details>
+      <details><summary>Какие машины обслуживаете?</summary><p>Все классы: седан, кроссовер, внедорожник, пикап и микроавтобус. К каждой относимся одинаково внимательно.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand">MEAT<span style="color:var(--red)">·</span>WASH</div>
+        <p style="color:var(--muted);max-width:30ch;margin-top:12px">Премиальный уход за автомобилем. Москва.</p>
+      </div>
+      <div class="col">
+        <h5>Точки</h5>
+        <a href="https://n975571.yclients.com" target="_blank" rel="noopener">Лубянка · Мясницкая, 11</a>
+        <a href="tel:+79300352325">+7 930 035-23-25</a>
+        <a href="https://n1982508.yclients.com" target="_blank" rel="noopener">Технопарк · Андропова, 8</a>
+        <a href="tel:+79314916991">+7 931 491-69-91</a>
+      </div>
+      <div class="col">
+        <h5>Мы в сети</h5>
+        <a href="https://t.me/meatwash_lubyanka" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com/meatwash_moscow" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="legal"><span>© <span id="yr"></span> MEAT WASH</span><span>Сделано с заботой</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://t.me/meatwash_lubyanka" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+
+<div class="mbar">
+  <a class="btn btn-ghost" href="#prices">Цены</a>
+  <a class="btn btn-primary" href="#locations">Записаться</a>
+</div>
+
+<!-- Структурированные данные для Google/Яндекс (звёзды рейтинга, адреса, часы в поиске) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CarWash","name":"Meat Wash Лубянка","image":"","address":{"@type":"PostalAddress","streetAddress":"Мясницкая ул., 11","addressLocality":"Москва","addressCountry":"RU"},"telephone":"+79300352325","url":"https://n975571.yclients.com","openingHours":"Mo-Fr 08:00-22:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CarWash","name":"Meat Wash Технопарк","image":"","address":{"@type":"PostalAddress","streetAddress":"просп. Андропова, 8, стр. 2","addressLocality":"Москва","addressCountry":"RU"},"telephone":"+79314916991","url":"https://n1982508.yclients.com","openingHours":"Mo-Su 08:00-22:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Нужна ли предварительная запись?","acceptedAnswer":{"@type":"Answer","text":"Лучше записаться онлайн — так мы примем вовремя и без ожидания."}},{"@type":"Question","name":"От чего зависит цена?","acceptedAnswer":{"@type":"Answer","text":"От класса автомобиля и состояния. Точную сумму назовём при записи или на осмотре."}},{"@type":"Question","name":"Какие машины обслуживаете?","acceptedAnswer":{"@type":"Answer","text":"Все классы: седан, кроссовер, внедорожник, пикап и микроавтобус."}}]}
+</script>
+
+<!-- ============================================================
+  ИНТЕГРАЦИИ — раскомментируй после деплоя:
+  1) Яндекс.Метрика (вместо XXXXXXXX — номер счётчика). Цели по кликам data-goal:
+  <script>document.querySelectorAll('[data-goal]').forEach(function(el){el.addEventListener('click',function(){if(window.ym)ym(XXXXXXXX,'reachGoal',el.dataset.goal);});});</script>
+  2) Виджет YCLIENTS как плавающая кнопка (по желанию; запись уже работает прямой ссылкой):
+     Лубянка: https://w975571.yclients.com/widgetJS  ·  Технопарк: https://w1982508.yclients.com/widgetJS
+============================================================ -->
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // reveal
+  var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  // before/after slider
+  (function(){
+    var ba=document.getElementById('ba'),before=document.getElementById('baBefore'),h=document.getElementById('baHandle');
+    function set(x){var r=ba.getBoundingClientRect();var p=Math.max(0,Math.min(1,(x-r.left)/r.width));before.style.clipPath='inset(0 '+(100-p*100)+'% 0 0)';h.style.left=(p*100)+'%';}
+    var drag=false;
+    ba.addEventListener('mousedown',function(e){drag=true;set(e.clientX);});
+    window.addEventListener('mousemove',function(e){if(drag)set(e.clientX);});
+    window.addEventListener('mouseup',function(){drag=false;});
+    ba.addEventListener('touchstart',function(e){drag=true;set(e.touches[0].clientX);},{passive:true});
+    ba.addEventListener('touchmove',function(e){if(drag)set(e.touches[0].clientX);},{passive:true});
+    ba.addEventListener('touchend',function(){drag=false;});
+  })();
+
+  // price by car class  (// подставь точные суммы из YCLIENTS)
+  var PRICES={
+    sedan:    {wash:'от 1 150',complex:'2 850',reagents:'4 450',chem:'от 8 000',polish:'от 10 000',quartz:'от 2 500'},
+    crossover:{wash:'от 1 350',complex:'3 250',reagents:'5 100',chem:'от 9 000',polish:'от 11 500',quartz:'от 2 900'},
+    suv:      {wash:'от 1 550',complex:'3 700',reagents:'5 800',chem:'от 10 500',polish:'от 13 000',quartz:'от 3 300'},
+    pickup:   {wash:'от 1 750',complex:'4 150',reagents:'6 500',chem:'от 12 000',polish:'от 14 500',quartz:'от 3 700'}
+  };
+  function renderPrices(cls){
+    var d=PRICES[cls];
+    document.querySelectorAll('.val[data-svc]').forEach(function(el){
+      el.innerHTML=d[el.dataset.svc]+' <small>₽</small>';
+    });
+  }
+  document.getElementById('tabs').addEventListener('click',function(e){
+    var b=e.target.closest('.tab'); if(!b)return;
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+    b.classList.add('active'); renderPrices(b.dataset.cls);
+  });
+  renderPrices('sedan');
+</script>
+</body>
+</html>
