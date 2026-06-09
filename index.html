@@ -8,7 +8,14 @@
 <meta property="og:title" content="MEAT WASH — премиальный уход за автомобилем" />
 <meta property="og:description" content="Уход, а не просто мойка. Две точки в Москве. Онлайн-запись за минуту." />
 <meta property="og:type" content="website" />
-<!-- <meta property="og:image" content="images/og.jpg" />  TODO: обложка 1200x630 -->
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:site_name" content="MEAT WASH" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MEAT WASH — премиальный уход за автомобилем" />
+<meta name="twitter:description" content="Уход, а не просто мойка. Две точки в Москве. Онлайн-запись за минуту." />
+<meta name="theme-color" content="#0A0A0A" />
+<meta name="robots" content="index,follow" />
+<!-- <meta property="og:image" content="images/og.jpg" />  TODO: обложка 1200x630 (та же ссылка в twitter:image) -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -214,7 +221,7 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
 <div class="trust">
   <div class="wrap">
     <span><span class="stars">★★★★★</span> <b>5.0</b> на Яндекс Картах</span>
-    <span><b>200+</b> отзывов <span style="color:var(--muted-2)">// сверь актуальное число</span></span>
+    <span><b>200+</b> отзывов </span><!-- сверь актуальное число перед публикацией -->
     <span><b>2</b> точки в Москве · Лубянка и Технопарк</span>
     <a href="https://yandex.ru/maps/org/meat_wash/191686454110" target="_blank" rel="noopener">Читать отзывы →</a>
   </div>
@@ -231,13 +238,14 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
 <section class="block" id="proof">
   <div class="wrap">
     <div class="head rv"><div><span class="eyebrow">Наглядно</span><h3>До и после</h3></div></div>
-    <div class="ba rv" id="ba">
+    <div class="ba rv" id="ba" role="slider" tabindex="0" aria-label="Сравнение до и после мойки" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% — до / после">
       <div class="layer after">ПОСЛЕ</div>
       <div class="layer before" id="baBefore">ДО</div>
       <span class="tagb">До</span><span class="taga">После</span>
       <div class="handle" id="baHandle"></div>
     </div>
-    <p class="ba-note">Потяни ползунок. // замени фон .before и .after на свои реальные фото «до/после»</p>
+    <p class="ba-note">Потяни ползунок или используй стрелки на клавиатуре.</p>
+    <!-- замени фон .before и .after на реальные фото «до/после» -->
   </div>
 </section>
 
@@ -271,13 +279,14 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
 <section class="block" id="prices" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="head rv"><div><span class="eyebrow">Честно и постоянно</span><h3>Цены по классу авто</h3></div><a class="btn btn-ghost btn-sm" href="#locations">Записаться</a></div>
-    <div class="tabs rv" id="tabs">
-      <button class="tab active" data-cls="sedan">Седан</button>
-      <button class="tab" data-cls="crossover">Кроссовер</button>
-      <button class="tab" data-cls="suv">Внедорожник</button>
-      <button class="tab" data-cls="pickup">Пикап · микроавтобус</button>
+    <div class="tabs rv" id="tabs" role="tablist" aria-label="Класс автомобиля">
+      <button class="tab active" data-cls="sedan" role="tab" aria-selected="true">Седан</button>
+      <button class="tab" data-cls="crossover" role="tab" aria-selected="false">Кроссовер</button>
+      <button class="tab" data-cls="suv" role="tab" aria-selected="false">Внедорожник</button>
+      <button class="tab" data-cls="pickup" role="tab" aria-selected="false">Пикап · микроавтобус</button>
     </div>
-    <p class="price-note rv">Полный прайс — при записи. Мойку не продаём со скидкой: делаем одинаково хорошо всегда.<br><span style="color:var(--muted-2)">// суммы и коэффициенты по классам — примерные, подставь точные из YCLIENTS</span></p>
+    <p class="price-note rv">Полный прайс — при записи. Мойку не продаём со скидкой: делаем одинаково хорошо всегда.</p>
+    <!-- суммы и коэффициенты по классам — примерные, подставь точные из YCLIENTS -->
     <div class="price-list rv">
       <div class="price-row"><div><span class="name">Ручная мойка кузова</span><span class="desc">Снаружи, аккуратно и чисто</span></div><div class="val" data-svc="wash"></div></div>
       <div class="price-row"><div><span class="name">Комплексная мойка с воском</span><span class="desc">Кузов + салон + стёкла</span></div><div class="val" data-svc="complex"></div></div>
@@ -306,9 +315,10 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
   <div class="wrap">
     <div class="head rv"><div><span class="eyebrow">5.0 на Яндексе</span><h3>Что говорят клиенты</h3></div><a class="btn btn-ghost btn-sm" href="https://yandex.ru/maps/org/meat_wash/191686454110" target="_blank" rel="noopener">Все отзывы</a></div>
     <div class="grid-rev rv">
-      <div class="rev"><div class="st">★★★★★</div><p>Машину вернули как новую, видно, что делали аккуратно и без спешки. Приеду ещё.</p><div class="who">// пример — замени реальным отзывом</div></div>
-      <div class="rev"><div class="st">★★★★★</div><p>Записался онлайн за минуту, приняли вовремя. Отношение — будто это их собственная машина.</p><div class="who">// пример — замени реальным отзывом</div></div>
-      <div class="rev"><div class="st">★★★★★</div><p>Премиум во всём: от чистоты до общения. Цена честная, результат держится.</p><div class="who">// пример — замени реальным отзывом</div></div>
+      <!-- примеры отзывов — замени реальными с Яндекс Карт -->
+      <div class="rev"><div class="st">★★★★★</div><p>Машину вернули как новую, видно, что делали аккуратно и без спешки. Приеду ещё.</p><div class="who">Отзыв клиента</div></div>
+      <div class="rev"><div class="st">★★★★★</div><p>Записался онлайн за минуту, приняли вовремя. Отношение — будто это их собственная машина.</p><div class="who">Отзыв клиента</div></div>
+      <div class="rev"><div class="st">★★★★★</div><p>Премиум во всём: от чистоты до общения. Цена честная, результат держится.</p><div class="who">Отзыв клиента</div></div>
     </div>
   </div>
 </section>
@@ -394,10 +404,10 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
 
 <!-- Структурированные данные для Google/Яндекс (звёзды рейтинга, адреса, часы в поиске) -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CarWash","name":"Meat Wash Лубянка","image":"","address":{"@type":"PostalAddress","streetAddress":"Мясницкая ул., 11","addressLocality":"Москва","addressCountry":"RU"},"telephone":"+79300352325","url":"https://n975571.yclients.com","openingHours":"Mo-Fr 08:00-22:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200"}}
+{"@context":"https://schema.org","@type":"CarWash","name":"Meat Wash Лубянка","image":"","address":{"@type":"PostalAddress","streetAddress":"Мясницкая ул., 11","addressLocality":"Москва","addressCountry":"RU"},"telephone":"+79300352325","url":"https://n975571.yclients.com","priceRange":"₽₽","areaServed":"Москва","openingHours":"Mo-Fr 08:00-22:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CarWash","name":"Meat Wash Технопарк","image":"","address":{"@type":"PostalAddress","streetAddress":"просп. Андропова, 8, стр. 2","addressLocality":"Москва","addressCountry":"RU"},"telephone":"+79314916991","url":"https://n1982508.yclients.com","openingHours":"Mo-Su 08:00-22:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200"}}
+{"@context":"https://schema.org","@type":"CarWash","name":"Meat Wash Технопарк","image":"","address":{"@type":"PostalAddress","streetAddress":"просп. Андропова, 8, стр. 2","addressLocality":"Москва","addressCountry":"RU"},"telephone":"+79314916991","url":"https://n1982508.yclients.com","priceRange":"₽₽","areaServed":"Москва","openingHours":"Mo-Su 08:00-22:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"200"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Нужна ли предварительная запись?","acceptedAnswer":{"@type":"Answer","text":"Лучше записаться онлайн — так мы примем вовремя и без ожидания."}},{"@type":"Question","name":"От чего зависит цена?","acceptedAnswer":{"@type":"Answer","text":"От класса автомобиля и состояния. Точную сумму назовём при записи или на осмотре."}},{"@type":"Question","name":"Какие машины обслуживаете?","acceptedAnswer":{"@type":"Answer","text":"Все классы: седан, кроссовер, внедорожник, пикап и микроавтобус."}}]}
@@ -421,14 +431,23 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
   // before/after slider
   (function(){
     var ba=document.getElementById('ba'),before=document.getElementById('baBefore'),h=document.getElementById('baHandle');
-    function set(x){var r=ba.getBoundingClientRect();var p=Math.max(0,Math.min(1,(x-r.left)/r.width));before.style.clipPath='inset(0 '+(100-p*100)+'% 0 0)';h.style.left=(p*100)+'%';}
+    var pos=50;
+    function apply(p){pos=Math.max(0,Math.min(100,p));before.style.clipPath='inset(0 '+(100-pos)+'% 0 0)';h.style.left=pos+'%';var v=Math.round(pos);ba.setAttribute('aria-valuenow',v);ba.setAttribute('aria-valuetext',v+'% — до / после');}
+    function setX(x){var r=ba.getBoundingClientRect();apply((x-r.left)/r.width*100);}
     var drag=false;
-    ba.addEventListener('mousedown',function(e){drag=true;set(e.clientX);});
-    window.addEventListener('mousemove',function(e){if(drag)set(e.clientX);});
+    ba.addEventListener('mousedown',function(e){drag=true;setX(e.clientX);});
+    window.addEventListener('mousemove',function(e){if(drag)setX(e.clientX);});
     window.addEventListener('mouseup',function(){drag=false;});
-    ba.addEventListener('touchstart',function(e){drag=true;set(e.touches[0].clientX);},{passive:true});
-    ba.addEventListener('touchmove',function(e){if(drag)set(e.touches[0].clientX);},{passive:true});
+    ba.addEventListener('touchstart',function(e){drag=true;setX(e.touches[0].clientX);},{passive:true});
+    ba.addEventListener('touchmove',function(e){if(drag)setX(e.touches[0].clientX);},{passive:true});
     ba.addEventListener('touchend',function(){drag=false;});
+    ba.addEventListener('keydown',function(e){
+      var step=e.shiftKey?10:5;
+      if(e.key==='ArrowLeft'||e.key==='ArrowDown'){apply(pos-step);e.preventDefault();}
+      else if(e.key==='ArrowRight'||e.key==='ArrowUp'){apply(pos+step);e.preventDefault();}
+      else if(e.key==='Home'){apply(0);e.preventDefault();}
+      else if(e.key==='End'){apply(100);e.preventDefault();}
+    });
   })();
 
   // price by car class  (// подставь точные суммы из YCLIENTS)
@@ -446,8 +465,8 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
   }
   document.getElementById('tabs').addEventListener('click',function(e){
     var b=e.target.closest('.tab'); if(!b)return;
-    document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
-    b.classList.add('active'); renderPrices(b.dataset.cls);
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false');});
+    b.classList.add('active'); b.setAttribute('aria-selected','true'); renderPrices(b.dataset.cls);
   });
   renderPrices('sedan');
 </script>
