@@ -420,12 +420,31 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:54px 0 40
 </script>
 
 <!-- ============================================================
-  ИНТЕГРАЦИИ — раскомментируй после деплоя:
-  1) Яндекс.Метрика (вместо XXXXXXXX — номер счётчика). Цели по кликам data-goal:
-  <script>document.querySelectorAll('[data-goal]').forEach(function(el){el.addEventListener('click',function(){if(window.ym)ym(XXXXXXXX,'reachGoal',el.dataset.goal);});});</script>
-  2) Виджет YCLIENTS как плавающая кнопка (по желанию; запись уже работает прямой ссылкой):
-     Лубянка: https://w975571.yclients.com/widgetJS  ·  Технопарк: https://w1982508.yclients.com/widgetJS
+  Яндекс.Метрика. ЧТОБЫ ВКЛЮЧИТЬ: замени 00000000 на номер своего счётчика
+  (он встречается в ДВУХ местах ниже — в строке var YM_ID и в noscript).
+  Цели по кликам на кнопки «Записаться»/«Маршрут» (data-goal) уже настроены:
+  book_lubyanka, route_lubyanka, book_technopark, route_technopark.
 ============================================================ -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+
+  var YM_ID = 00000000; /* ← номер счётчика Яндекс.Метрики */
+  ym(YM_ID, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+
+  /* Достижение целей по кликам на кнопки с атрибутом data-goal */
+  document.querySelectorAll('[data-goal]').forEach(function(el){
+    el.addEventListener('click', function(){ if(window.ym) ym(YM_ID, 'reachGoal', el.dataset.goal); });
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute;left:-9999px" alt="" /></div></noscript>
+
+<!-- Виджет YCLIENTS как плавающая кнопка (по желанию; запись уже работает прямой ссылкой):
+     Лубянка: https://w975571.yclients.com/widgetJS  ·  Технопарк: https://w1982508.yclients.com/widgetJS -->
+
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();

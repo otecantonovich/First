@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://otecantonovich.github.io/First/sitemap.xml
